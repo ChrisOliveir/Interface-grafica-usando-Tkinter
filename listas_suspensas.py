@@ -10,7 +10,6 @@ mensagem = tk.Label(text="Teste", foreground='white', background="black", width=
 # as cores eu posso procurar o numero hexadecimal 
 mensagem.grid(row=0,column=0, columnspan=2, sticky="NSEW") # permite que coloque as mensagens em linhas e colunas como se fosse o excel, columnspan = quantas colunas ocupa.
 #sticky = preenche para leste/oeste/norte/sul colocando as respectivas iniciais em ingles NSEW
-
 mensagem2 = tk.Label(text="selecione o valor")
 mensagem2.grid(row=1, column=0)
 
@@ -20,8 +19,8 @@ tes.grid(row=1, column=1)
 
 
 dicionario_numeros = {
-    'a': 8,
-    'b': 9,
+    '1': 1,
+    '9': 9,
 }
 
 num = list(dicionario_numeros.keys())
@@ -33,11 +32,12 @@ def buscar_numeros():
     numero_disponivel = dicionario_numeros.get(numero_preenchido)
     mensagem = tk.Label(text="Numero não disponivel")
     mensagem.grid(row=3, column=0)
-    if numero_disponivel:
-        mensagem["text"] = f'numero do {numero_preenchido} é {numero_disponivel}'
-        pass 
+    tsl = 2
+    if tsl < numero_disponivel:
+        print("ok")
     else:
-        pass 
+        print("n ok")
+
 
 botao = tk.Button(text="Adicionar numero", command=buscar_numeros)
 botao.grid(row=2, column=1)
